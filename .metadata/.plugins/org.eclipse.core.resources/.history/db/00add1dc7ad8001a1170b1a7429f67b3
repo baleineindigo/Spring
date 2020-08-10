@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="ItemMapper">
+	<resultMap type="Item" id="SelectRM">
+		<result property="itemNumber" column="item_id"/>
+		<result property="name" column="item_name"/>
+		<result property="price" column="price"/>
+		<result property="description" column="description"/>
+		<result property="url" column="picture_url"/>
+		<result property="count" column="count"/>	
+	</resultMap>
+	
+	<sql id="select-Items">
+		select item_id,item_name,price,description,picture_url from item
+	</sql>
+
+	<select id="getItem" parameterType="int" resultType="item">
+		<include refid="select-Items"/>
+		 where item_id= #{value}
+	</select>
+	
+	<select id="getItemList" resultMap="SelectRM">
+		<include refid="select-Items"/>		
+	</select>
+		
+	<insert id="addItem" parameterType="Item">
+		insert into 
+		Items(Item_id,Item_name,password,age,grade,reg_date) 
+		values(#{itemNumber},#{name},#{price},#{description},#{url},#{count})
+	</insert>	
+	
+	<update id="updateItem" parameterType="Item">
+		update item
+		set Item_name=#{ItemName}
+		where item_name="주몽"
+	</update>
+	
+	<delete id="removeItem" parameterType="string">
+		delete
+		from item
+		where item_id=#{value}
+	</delete>
+
+
+</mapper>

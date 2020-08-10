@@ -1,0 +1,6 @@
+package com.encore.spring.model;
+
+public class MultiFileVO {
+	private String userName;
+	private List<MutipartFile> file;
+}

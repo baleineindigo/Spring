@@ -1,0 +1,18 @@
+
+8월 06, 2020 12:42:30.17 NEW SESSION
+8월 06, 2020 12:42:30.17 [28508:26664:0806/124230.112:ERROR:socket_stream.cc(219)] Closing stream with result -2
+
+8월 07, 2020 12:03:53.09 NEW SESSION
+8월 07, 2020 12:03:53.09 [17848:17840:0807/120353.095:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 07, 2020 12:42:39.61 [15436:19068:0807/124239.609:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 07, 2020 13:21:33.65 [24580:24944:0807/132133.652:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+
+8월 07, 2020 15:29:56.81 NEW SESSION
+8월 07, 2020 15:29:56.81 [8868:19748:0807/152956.808:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 07, 2020 15:32:57.52 [8868:19748:0807/153257.525:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+8월 07, 2020 16:01:36.51 [24800:21864:0807/160136.511:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 07, 2020 16:13:19.80 [24800:21864:0807/161319.806:ERROR:socket_stream.cc(219)] Closing stream with result -2
+
+8월 10, 2020 10:03:25.96 NEW SESSION
+8월 10, 2020 10:03:25.96 [7812:16528:0810/100325.964:ERROR:socket_stream.cc(219)] Closing stream with result -2
+8월 10, 2020 12:47:27.99 [13248:8648:0810/124727.990:ERROR:socket_stream.cc(219)] Closing stream with result -2

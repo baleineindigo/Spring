@@ -1,0 +1,9 @@
+package com.encore.spring.model.Impl;
+
+import java.util.List;
+
+import com.encore.spring.domain.MyProduct;
+
+public class MyProductServiceImpl {
+
+}

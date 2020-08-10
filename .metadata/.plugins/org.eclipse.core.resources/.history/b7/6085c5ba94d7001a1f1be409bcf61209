@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="ProductMapper">
+	<insert id="addProduct" parameterType="myProduct">
+		insert into
+		myproduct (name,maker,price) 
+		values(#{name},#{maker},#{price})
+		<!-- db에서 자동 생성될 경우 DB와 VO가 동기화가 안 된다 . 그리고 자동 생성된 컬럼이 PK일 때 문제가 된다.-->		
+	</insert>
+	
+	<select id="findProductByName" parameterType="string" resultType="myProduct">
+		select id,name,maker,price from myproduct
+		where id=#{value}
+	</select>
+	<select id="findProducts" resultType="list">
+		select id,name,maker,price from myproduct
+	</select>
+</mapper>
+ 

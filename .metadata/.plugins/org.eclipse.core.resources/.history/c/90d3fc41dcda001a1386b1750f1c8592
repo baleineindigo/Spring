@@ -1,0 +1,11 @@
+package com.encore.spring.model;
+
+import com.encore.spring.domain.Member;
+
+public interface MemberDAO {
+	Member getMember(String id);
+	Member getMemberList(Member);
+	Member getMember(String id);
+	Member getMember(String id);
+	Member getMember(String id);
+}

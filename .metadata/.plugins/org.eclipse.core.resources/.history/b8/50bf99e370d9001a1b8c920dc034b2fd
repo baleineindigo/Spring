@@ -1,0 +1,49 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.encore.model.ItemDAO;
+import com.encore.spring.domain.Item;
+import com.mysql.cj.Session;
+
+@Repository
+public class ItemDAOimpl implements ItemDAO{
+	@Autowired
+	SqlSession sqlSession;
+	
+	private final String NS="ItemMapper.";
+	
+	@Override
+	public Item getItem(int itemId) {
+		return sqlSession.selectOne(NS+"getItem",itemId);
+	}
+
+	@Override
+	public List<Item> getItemList() {
+		return sqlSession.selectList(NS+"getItemList");
+	}
+
+	@Override
+	public void addItem(Item item) {
+
+		
+	}
+
+	@Override
+	public void updateItem(Item item) {
+
+		
+	}
+
+	@Override
+	public void removeItem(int itemId) {
+
+		
+	}
+	
+	
+}

@@ -1,0 +1,10 @@
+package com.encore.mabatis.test;
+
+public class SimpleMyBatisAppTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

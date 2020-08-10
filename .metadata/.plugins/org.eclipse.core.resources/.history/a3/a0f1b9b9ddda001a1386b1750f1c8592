@@ -1,0 +1,74 @@
+package com.encore.spring.test;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.encore.spring.domain.Member;
+
+public class MyBatisTest1 {
+
+	@Test
+	public void unit() throws IOException {
+		Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+		SqlSession session = factory.openSession();
+
+		String NS = "MemberMapper.";
+		Member member= new Member("111","임채은","123456","신림동");
+//		System.out.println(member);
+//		int result=session.insert(NS+"addMember",member);
+//		System.out.println("=================Insert VO=================");	
+//		System.out.println(result);
+//		
+//		 List<Member> list=session.selectList(NS+"getMemberList");
+//		 for(Member it : list) {
+//			System.out.println("=================selectList=================");
+//		 	System.out.println(it);
+//		 }
+//		 
+//		 int result=session.update(NS+"updateMember",member);
+//		 System.out.println("=================Update VO=================");
+//		 System.out.println(result);
+//		 
+//		 Member vo=session.selectOne(NS+"getMember",member.getId());
+//		 System.out.println("=================select One=================");
+//		 System.out.println(vo);
+//		 
+//		 int result=session.delete(NS+"removeMember",member.getId());
+//		 System.out.println("=================Delete One=================");
+//		 System.out.println(result);
+		 
+//		//////////////////DAO & Service Unit Test/////////////////////
+		ApplicationContext context =new ClassPathXmlApplicationContext("/beans/applicationBean.xml");
+		//spring beans,context,core,expression 라이브러리 삽입 필요
+		MemberService MemberService = (MemberService) context.getBean("MemberServiceImpl");
+		
+		System.out.println("=================1. Insert VO=================");
+		MemberService.addMember(Member);
+		
+		System.out.println("=================2. selectOne VO=================");
+		Member Member=new Member(4,"포도", 300, "폴리페놀을 다량 함유하고 있어 항산화작용을 합니다","podo.jpg",5);
+		System.out.println(MemberService.getMember(Member.getMemberId()));
+
+		System.out.println("=================3. update VO=================");
+		Member Member=new Member(4,"포도", 300, "폴리페놀을 다량 함유하고 있어 항산화작용을 합니다","podo.jpg",5);
+		MemberService.updateMember(Member);
+
+		System.out.println("=================3. delete VO=================");
+		Member Member=new Member(4,"포도", 300, "폴리페놀을 다량 함유하고 있어 항산화작용을 합니다","podo.jpg",5);
+		MemberService.removeMember(Member.getMemberId());
+
+		System.out.println("=================3. SelectAll VO=================");
+		System.out.println(MemberService.getMemberList());
+		
+	}
+}

@@ -1,0 +1,9 @@
+package ibatis.services.user;
+/*
+ * DAO 비지니스 로직의 템플릿 포함.
+ * - 
+ * 
+ */
+public interface UserDAO {
+	
+}

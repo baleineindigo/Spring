@@ -1,0 +1,5 @@
+package com.encore.model;
+
+public interface ItemDAO {
+	public Item getItem(int itemId)
+}

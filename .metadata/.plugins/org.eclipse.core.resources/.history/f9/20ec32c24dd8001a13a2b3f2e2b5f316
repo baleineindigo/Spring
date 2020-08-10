@@ -1,0 +1,11 @@
+package com.encore.spring.domain;
+
+public class Item {
+	 private String itemId; //item_id
+	 private String itemName; //item_name
+	 private int price;
+	 private String description;
+	 private String pictureUrl; //picture_url
+	 
+	 
+}

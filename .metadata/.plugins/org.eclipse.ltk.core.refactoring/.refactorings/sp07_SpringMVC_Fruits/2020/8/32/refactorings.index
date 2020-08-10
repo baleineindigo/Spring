@@ -1,0 +1,25 @@
+1596763781658	Rename type 'Fruit'
+1596765066755	Rename package 'com.encore.spring'
+1596765092506	Delete element
+1596766022551	Rename type 'MyBatisUnitTest2'
+1596766489910	Delete element
+1596766534325	Rename resource 'ApplicationBean.xml'
+1596766802587	Rename resource 'item_mapping.xml'
+1596767265984	Rename type 'MyBatisUnitTest'
+1596768426733	Delete element
+1596768974164	Rename type 'ItemServiceDAO'
+1596769545529	Rename type 'MyProductController'
+1596770273168	Rename type 'ItemController'
+1596771252971	Copy files
+1596771259089	Delete elements
+1596773933093	Move 'index.jsp' to 'WEB-INF'
+1596775475297	Move 'index.jsp' to 'webapp'
+1596775748764	Delete element
+1596776417910	Delete element
+1596776439789	Delete element
+1596778141812	Rename resource 'itemView.jsp'
+1596882456051	Copy files
+1596885294574	Copy folder
+1596897102872	Copy file
+1596897160531	Copy compilation unit
+1596897542593	Copy files

@@ -1,0 +1,7 @@
+package ibatis.services.user;
+/*
+ * DAO 
+ */
+public interface UserDAO {
+	
+}

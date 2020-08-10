@@ -1,0 +1,12 @@
+package ibatis.services.user;
+
+import ibatis.services.domain.User;
+
+/*
+ * DAO 비지니스 로직의 템플릿 포함.
+ * - mybatis-userservice-mapping10.xml...에 있는 로직 개수만큼 5개
+ * 
+ */
+public interface UserDAO {
+	public User addUser(User user);
+}

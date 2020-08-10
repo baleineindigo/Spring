@@ -1,0 +1,34 @@
+package com.encore.spring.test;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import com.encore.spring.domain.Item;
+
+public class MyBatisUnitTest {
+
+	@Test
+	public void unit() throws Exception {
+	Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+	SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+	SqlSession session = factory.openSession();
+
+	Item vo =new Item(10, "알라딘", 3800, "알라딘", "https://www.aladin.co.kr/home/welcome.aspx?partner=naverk&BSCPN=ORM&BSPRG=NAVERSA&BSCCN1=31829&utm_source=NAVERSA&utm_medium=cpc&utm_term=%EC%95%8C%EB%9D%BC%EB%94%94&n_media=27758&n_query=%EC%95%8C%EB%9D%BC%EB%94%94&n_rank=2&n_ad_group=grp-m001-01-000001087407795&n_ad=nad-a001-01-000000028031872&n_keyword_id=nkw-m001-01-000000304091847&n_keyword=%EC%95%8C%EB%9D%BC%EB%94%94&n_campaign_type=1&NaPm=ct%3Djdzb4v20%7Cci%3D0zC0003NsmXo3-Q6XKZm%7Ctr%3Dsa%7Chk%3D1de7eff664e38a1f40ab452debc9cbeea2de68e7", 1);
+	System.out.println("db 들어가기 전"+vo.getName());
+	
+	session.insert("ProductMapper.addProduct",vo);
+	System.out.println("Insert OK!!");
+	System.out.println("db 들어간 후"+vo.getName());
+	
+	session.commit();
+	
+		}
+	}
+

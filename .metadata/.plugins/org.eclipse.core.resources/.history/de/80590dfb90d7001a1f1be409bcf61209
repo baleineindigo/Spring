@@ -1,0 +1,25 @@
+package com.encore.spring.domain;
+
+public class MyProduct {
+	private int id;
+	private String name;
+	private String maker;
+	private int price;
+	
+	public MyProduct(int id, String name, String maker, int price) {
+		this.id = id;
+		this.name = name;
+		this.maker = maker;
+		this.price = price;
+	}
+	
+	public MyProduct( String name, String maker, int price) {
+		this.name = name;
+		this.maker = maker;
+		this.price = price;
+	}
+
+	public MyProduct() {}
+
+	
+}

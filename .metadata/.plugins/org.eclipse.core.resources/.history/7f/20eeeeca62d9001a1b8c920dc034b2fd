@@ -1,0 +1,6 @@
+package com.encore.spring.domain;
+
+public class Item {
+	private int itemId;	//item_id
+	private String itemName;	//item_name
+}

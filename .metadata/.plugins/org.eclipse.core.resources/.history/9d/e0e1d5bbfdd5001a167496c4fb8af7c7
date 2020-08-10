@@ -1,0 +1,11 @@
+package com.encore.mabatis.test;
+/*
+ * mysawon 테이블에 있는 모든 사원의 정보를 출력하는 코드를 작성
+ */
+public class SimpleMyBatisAppTest2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

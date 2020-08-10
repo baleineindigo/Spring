@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 개발자 정의 인스턴스 :: setter 단순 파라미터 주입 :: id=01유저,age=10 -->	
+	<bean id ="user01" class = 'spring.service.domain.User'>
+		<property name="userId" value="01유저"/>
+		<property name="age" value="10"/>
+	</bean>
+
+
+	<!-- API instance :: 생성자를 통한 단순 파라미터 값 주입 -->
+	<bean id = "password" class="java.lang.String">
+		<constructor-arg value="77777"></constructor-arg>
+	</bean>
+	<bean id ="user02" class = 'spring.service.domain.User'>
+		<property name="userId" value="02유저"/>
+		<property name="password" ref="password"/>
+		<property name="age" value="02"/>
+	</bean>
+
+	<!-- 개발자 정의 인스턴스 user03 :: DI가 없음(=주입이 없음. 객체만 만들기.. 값이 주입이 안되면 값이 모두 null/0으로 나옴)
+		setter는 하나도 안 돌아감 -->
+	<bean id ="user03" class ='spring.service.domain.User'/>
+	
+	<bean id ="user04" class ='spring.service.domain.User'>
+		<constructor-arg name="userId" value="user04"/>
+		<constructor-arg name="password" value="user12345**"/>
+		<constructor-arg name="age" value="04" />
+<!-- 	<constructor-arg value="user12345**"/>
+		<constructor-arg value="user04"/>
+ -->		
+	</bean>
+
+
+	<bean id ="user05" class ='spring.service.domain.User'>
+		<constructor-arg value="user05" index="2"/>
+		<constructor-arg value="12345" type="java.lang.String" />
+		<constructor-arg value="5" name="age"/>
+	</bean>
+
+</beans>

@@ -1,0 +1,18 @@
+package com.encore.mabatis.test;
+/*
+ * SqlSessionFactory 하나 받아오는 로직을 따로 분리
+ */
+
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class FactoryService {
+	private static SqlSessionFactory factory;
+	
+	static {
+		try {
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}
+	}
+}

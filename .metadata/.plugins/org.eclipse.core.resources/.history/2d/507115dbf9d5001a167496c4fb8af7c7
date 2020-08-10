@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sql을 xml기반으로 mapping -->
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 다수 vo, 다수 테이블 생성함에 따라 vo별로 Mapper를 다르게 지정해줌. 이때 구분을 위해 namespace="mysawonMapper"라고 함. -->
+<mapper namespace="mysawonMapper">
+	<insert id="sawonAdd" parameterType="MySawon">
+	<!-- MySawon.getId=#{} : #이 getter와 같음 -->
+		insert into mysawon (id,pwd,name,age,hiredate) values(#{id},#{pwd},#{name},#{age},curDate())
+	</insert>
+</mapper>

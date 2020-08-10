@@ -1,0 +1,8 @@
+package com.encore.spring.model;
+
+public class MemberVO {
+	private String id;
+	private String name;
+	private String password;
+	private String address;
+}

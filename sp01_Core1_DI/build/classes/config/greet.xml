@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Bean 종류 	1) API Bean : 라이브러리		2) UserDefinition Bean : 사용자 정의  Bean
+	 Bean 주입 방법 	1) 생성자 주입		2) setter 주입
+-->
+
+	<!-- greet1이라는 이름으로 Greet 생성 -->
+	<bean id ="greet1" class="spring.service.greet.Greet"/>
+	
+	<!-- greet2 이라는 이름의  UserDefinition Bean 생성 , 생성자로 값 주입 -->
+	<bean id ="greet2" class="spring.service.greet.Greet">
+		<constructor-arg value="Hello~! Spring...Constructor Injection"/>
+	</bean>
+
+	<!-- greet3 이라는 이름의  UserDefinition Bean 생성  , setter로 값 주입 -->
+	<bean id ="greet3" class="spring.service.greet.Greet">
+	<!-- greet3.setMessage("Hi~! Spring di!!") -->
+		<property name="message" value="Hi~! Spring di!!"></property>
+	</bean>
+	
+	<!-- API Bean = String str = new String ("Spring Bean 설정 문서 만들기")-->
+	<bean id ="str" class="java.lang.String">
+		<constructor-arg value="Spring Bean 설정 문서 만들기"></constructor-arg>
+	</bean>
+	
+	<bean id="greet4" class="spring.service.greet.Greet">
+		<property name="message" ref="str"/>
+	</bean>
+
+
+	<!-- API Bean = String str = new String ("Spring Bean 설정 문서 만들기")-->
+	<bean id ="str_message" class="java.lang.String">
+		<constructor-arg value="Spring Bean 설정 문서 작성...user05"></constructor-arg>
+	</bean>
+	
+	<bean id="greet5" class="spring.service.greet.Greet">
+		<property name="message" ref="str_message"/>
+	</bean>
+	
+</beans>

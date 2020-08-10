@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ps12_SpringMVC_Workshop&apos; to &apos;sp12_SpringMVC_Workshop&apos;" description="Rename resource &apos;ps12_SpringMVC_Workshop&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ps12_SpringMVC_Workshop" name="sp12_SpringMVC_Workshop" stamp="1597042073100" updateReferences="true"/>
+</session>

@@ -1,0 +1,41 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+import com.encore.spring.model.MemberService;
+
+public class MemberServiceImpl implements MemberService{
+	MemberDAO memberDao;
+
+	@Override
+	public Member getMember(String id) {
+		return memberDao.getMember(id);
+	}
+
+	@Override
+	public List<Member> getMemberList() {
+		return memberDao.getMemberList();
+	}
+
+	@Override
+	public void addMember(Member member) {
+		memberDao.addMember(member);
+		
+	}
+
+	@Override
+	public void updateMember(Member member) {
+
+		
+	}
+
+	@Override
+	public void removeMember(String id) {
+
+		
+	}
+	
+	
+}

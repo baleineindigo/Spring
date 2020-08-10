@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--	
+	mybatis-userservice-mapping.xml : SQL 를 갖는 설정화일 (MetaData) 
+	- MyBatis Framework 은 XML MetaData를 사용 SQL구문을 관리하며,
+	  (SQL은 xml 을 통해 적절히 캡슐화 되어 애플리케이선 의 외부로 분리함)
+	- SQL문의 입력(?) / 출력(?)을 매핑한다.  <== 아래의 select element 참조
+ -->
+ 
+<!-- SQL definition -->
+<mapper namespace="UserMapper01">
+	<!--
+		ㅇ Application 에서 User.getUserList id 로 아래의 SQL 을 참조 할 수 있다.    
+	 -->
+	 
+	 <!-- 
+	 	입력(?) / 출력(?) 관리의 이해
+	 	- 아래의 query 수행 후 결과 resultType attribute 에 선언된 UserVO 객체 Field
+	 	  ( property )에 자동연결(?,자동 바인딩)
+	 	- SQL/Query 의 별칭(Alias)와 UserVO객체의 Field 의 변수이름이 동일한 것 확인.  
+	  -->
+	
+	<!-- SQL Definition 
+	vo에서 선언한 필드명과 컬럼명이 다를 때,alias로 맞춰야 값이 제대로 나옴 
+	jdbc는 알아서 잘 바꿔주는데...mybatis는 안됨.-->
+	
+	<!-- 
+	1. MyBtis에서 조건에 해당하는 단순 파라미터값을 받을 때 #{value} 사용 
+	2. myBatis에서 collection, 자바 라이브러리 클래스의 알리아스 사용
+		string ,int 등
+	-->
+	
+	<select id="getUser" resultType="user" parameterType="string">
+		select 
+		user_id as userId,
+		user_name as userName,
+		password as password,
+		age as age,
+		grade as grade,
+		reg_date as regDate
+		from users
+		where user_id=#{value}
+	</select>
+
+	<select id="getUserList" resultType="user" parameterType="string">
+		select 
+		user_id as userId,
+		user_name as userName,
+		password as password,
+		age as age,
+		grade as grade,
+		reg_date as regDate
+		from users
+	</select>
+
+
+	<!-- 파라미터 타입에 VO가 들어오면 #getter 문법, 파라미터타입에 단순 값만 나옴 -->
+	<select id="findUserId" resultType="string" parameterType="user">
+		select 
+		user_name as userName
+		from users
+		where user_id= #{userId} and password=#{password}
+		 
+	</select>
+	
+</mapper>

@@ -1,0 +1,29 @@
+package com.encore.spring.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.encore.spring.domain.Item;
+import com.encore.spring.model.ItemService;
+
+@Controller
+public class FruitsController{
+	@Autowired
+	private ItemService itemService;
+	
+	@RequestMapping(value="itemView.do")
+	public ModelAndView itemView(int name) {//폼에 입력된 값을 자동으로 바인딩 해서 넘어옴
+		Item item = itemService.getItem(itemNumber); // 폼의 name과 필드명이 일치해야함
+		return new ModelAndView("WEB-INF/views/itemView.jsp","item",item);	
+	}
+	
+	@RequestMapping("index.do")
+	public ModelAndView index() {
+		List<Item> itemList=itemService.getItemList();
+		return new ModelAndView("WEB-INF/views/itemList.jsp","itemList",itemList);	
+	}
+}

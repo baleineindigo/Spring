@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- wiring -->
+	<properties resource="config/dbconn.properties"/>
+	<typeAliases>
+		<typeAlias type="com.encore.mybatis.vo.MySawon" alias="mySawon"/>
+	</typeAliases>
+	
+	<!-- db서버 정보를 등록 -->
+	<environments default="development">
+		<environment id="development">
+		
+		</environment>
+	</environments>
+</configuration> 
+
+	

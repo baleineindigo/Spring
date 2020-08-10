@@ -1,0 +1,8 @@
+package com.encore.model;
+
+import com.encore.spring.domain.Item;
+
+public interface ItemDAO {
+	public Item getItem(int itemId);
+	public Item getItemList();
+}

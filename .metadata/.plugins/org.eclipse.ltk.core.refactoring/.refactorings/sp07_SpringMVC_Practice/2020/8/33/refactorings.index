@@ -1,0 +1,15 @@
+1596947765378	Rename resource 'listview'
+1596947770325	Move 'itemList.jsp' to 'list_result'
+1596947772433	Move 'itemView.jsp' to 'item_result'
+1596947782036	Move 'jsp_header.jsp' to 'item_result'
+1596947958442	Rename resource 'itemList.jsp'
+1596947967773	Rename resource 'itemView.jsp'
+1596948353820	Move 2 resources to 'webapp'
+1596949096839	Move 'app.xml' to 'WEB-INF'
+1596949102255	Move 'app.xml' to 'spring'
+1596949110618	Delete element
+1596949113969	Rename resource 'app.xml'
+1596949325299	Delete element
+1596949496691	Delete element
+1597042382099	Copy packages
+1597042887923	Copy compilation unit

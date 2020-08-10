@@ -1,0 +1,19 @@
+package com.encore.mabatis.test;
+
+import java.util.Scanner;
+
+import com.encore.mybatis.vo.MySawon;
+
+/* Scanner를 통해서 값을 입력 (화면을 대신)
+ * 입력받은 값을 MyBatis 라이브러리를 사용해서 DB에 Access하는 로직 작성
+ */
+public class SimpleMyBatisAppTest {
+
+	public static void main(String[] args) {
+	Scanner sc= new Scanner(System.in);
+	//받은 값을 vo에 setter로 주입
+	MySawon vo=new MySawon();
+
+	}
+
+}

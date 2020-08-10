@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="config/jdbc.properties"></properties>
+	
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="com.encore.spring.domain"/>
+		<!-- package 하위에 있는 파일들은 자동으로 첫번째 글자만 소문자로 바뀌면서 alias 자동 부여 -->
+ 		<!-- <typeAlias type="com.encore.spring.domain.MyProduct" alias="myProduct"/> -->
+	</typeAliases>
+	
+	<environments default="aa">
+		<environment id="aa">
+			<transactionManager type="JDBC"/>
+			<dataSource type="UNPOOLED">
+				<property name="driver" value="${JDBC.Driver}"/>
+				<property name="url" value="${JDBC.ConnectionURL}"/>
+				<property name="username" value="${JDBC.Username}"/>
+				<property name="password" value="${JDBC.Password}"/>
+			</dataSource>		
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="myproduct.xml"/>
+	</mappers>	
+	
+</configuration>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

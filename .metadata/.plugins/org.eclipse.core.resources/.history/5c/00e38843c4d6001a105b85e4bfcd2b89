@@ -1,0 +1,45 @@
+package ibatis.services.user.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import ibatis.services.domain.User;
+import ibatis.services.user.UserDAO;
+import ibatis.services.user.test.TestUtil;
+
+public class MyBatisUserDAOImpl10 implements UserDAO{
+	
+	SqlSessionFactory factory = TestUtil.getSqlSessionFactory();
+	@Override
+	public int addUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int updateUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int removeUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String userId) throws Exception {
+		
+		return null;
+	}
+
+	@Override
+	public List<User> getUserList(User user) throws Exception {
+		
+		return null;
+	}
+	
+}

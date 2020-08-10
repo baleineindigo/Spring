@@ -1,0 +1,34 @@
+package ibatis.services.user.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import ibatis.services.domain.User;
+import ibatis.services.user.UserDAO;
+import ibatis.services.user.UserService;
+
+public class MyBatisUserServiceImpl11 implements UserService{
+	private SqlSession sqlSession;
+	private UserDAO userDAO;
+	public void setSqlSession(SqlSession sqlSession) {
+		this.sqlSession = sqlSession;
+		System.out.println("::"+getClass().getName()+".setSqlSession() call...");
+	}
+	@Override
+	public void addUser(User user) throws Exception {
+		userDAO.addUser(user);	
+	}
+	@Override
+	public void updateUser(User user) throws Exception {
+		userDAO.updateUser(user);
+	}
+	@Override
+	public User getUser(String str) throws Exception {
+		userDAO.getUser(userId);
+	}
+	@Override
+	public List<User> getUserList(User user) throws Exception {
+		userDAO.getUserList(user);
+	}
+}

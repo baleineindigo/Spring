@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 컨트롤러가 수행한 후 리턴되는 객체인 ModelAndView에는 
+View 페이지 이름 + Model(Data) 정보 포함.
+
+View 페이지의 실질적인 물리적 위치 정보를 다루기 위해서 필요한 라이브러리 클래스가 ViewResolver이다.
+ViewResolver의 종류로 InternalResourceViewResolver(디폴트 클래스)가 있으며
+이 외에도 다양한 경로를 표시하기 위해서 BeanNameViewResolver 클래스가 사용된다.
+
+하지만, 이러한 용도 외에도 중요한 의미를 가진다.
+FileDownLoad, ajax 기술을 사용하려면 반드시 BeanNameViewResolver를 알아야 한다.
+ -->
+	<bean id="ViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="ViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	
+	
+	
+</beans:beans>
+
+</beans>

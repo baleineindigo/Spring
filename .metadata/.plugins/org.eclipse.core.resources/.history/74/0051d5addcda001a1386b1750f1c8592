@@ -1,0 +1,40 @@
+package com.encore.spring.impl;
+
+import java.util.List;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+
+public class MemberDAOImpl implements MemberDAO{
+
+	@Override
+	public Member getMember(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Member> getMemberList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addMember(Member member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateMember(Member member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeMember(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

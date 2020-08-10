@@ -1,0 +1,39 @@
+package com.encore.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.encore.spring.domain.Person;
+
+@Controller
+public class AjaxController {
+	
+//	@RequestMapping("insert.do")
+//	public ModelAndView insert() {
+//		System.out.println("동기통신....");
+//		return new ModelAndView("insert_result");
+//	}
+	
+	/*
+	 * ModelAndView = View페이지 이름과 ModelData
+	 * 그래서 위의 코드처럼 ModelAndView로 써도 되지만, View페이지 이름을 받고, Model에 Data 바인딩해도 됨 
+	 */
+	@RequestMapping("insert.do")
+	public String insert(Model model) {//결과 페이지 이름이 반환되므로 String
+		System.out.println("동기통신....");
+		model.addAttribute("info","동기통신~~~!!");
+		return "insert_result";
+	}
+
+	@RequestMapping("SearchId.do")
+	public ModelAndView search() {//결과 페이지 이름이 반환되므로 String
+		System.out.println("동기통신....");
+		return new ModelAndView("JsonView","person",new Person("이지은","한남동"));
+		//redirect
+		//return new ModelAndView("redirect:/index.jsp");
+		//return new ModelAndView("redirect:/allMember.do");
+	}
+
+}

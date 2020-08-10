@@ -1,0 +1,38 @@
+package com.encore.spring.test;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+
+import com.encore.spring.domain.Item;
+
+public class MyBatisUnitTest2 {
+
+	@Test
+	public void unit() throws Exception {
+	Reader r = Resources.getResourceAsReader("config/SqlMapConfig.xml");
+	SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(r);
+	SqlSession session = factory.openSession();
+	
+	Item vo =new Item();
+	System.out.println("db 들어가기 전"+vo.getName());
+	
+//		session.insert("ProductMapper.addProduct",vo);
+	System.out.println("Insert OK!!");
+	System.out.println("db 들어간 후"+vo.getName());
+	
+	session.commit();
+	
+	List<MyProduct> rvo=session.selectList("ProductMapper.findProductByName","버블");
+	for (MyProduct v :rvo) {
+		System.out.println(v);
+		}
+	}
+
+}

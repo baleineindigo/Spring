@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var=xhr;
+	function startRequest(){
+		xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=callback;
+		xhr.open("get","SearchId.do",true);
+		xhr.send(null);
+	}
+	// 응답하는 코드 부분의 로직
+	function callback(){
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				
+			}
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<h2>비동기 통신...Ajax...xml/text/★jason★</h2>
+	<a href="insert.do">동기 통신</a>
+	<input type="button" value="비동기 통신" onclick="startRequest()">
+</body>
+</html>

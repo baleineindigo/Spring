@@ -1,0 +1,36 @@
+package com.encore.spring.model.Impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.encore.spring.domain.MyProduct;
+import com.encore.spring.model.MyProductDAO;
+
+@Repository
+public class MyProductDAOImpl implements MyProductDAO{
+	@Autowired
+	SqlSession session;
+
+	@Override
+	public int addProduct() {
+		
+		return 0;
+	}
+
+	@Override
+	public List<Object> findProductByName(String name) {
+		return session.selectList("ProductMapper.findProductByName", "버블");
+	}
+
+	@Override
+	public ArrayList<MyProduct> findProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

@@ -1,0 +1,7 @@
+package ibatis.services.user.impl;
+
+import ibatis.services.user.UserDAO;
+
+public class MyBatisUserDAOImpl10 implements UserDAO{
+	
+}

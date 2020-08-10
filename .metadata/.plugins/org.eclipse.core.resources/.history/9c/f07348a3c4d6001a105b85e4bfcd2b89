@@ -1,0 +1,53 @@
+package ibatis.services.user.impl;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import ibatis.services.domain.User;
+import ibatis.services.user.UserDAO;
+import ibatis.services.user.test.TestUtil;
+
+public class MyBatisUserDAOImpl10 implements UserDAO{
+	
+	// DAO와 batis를 연결하기 위해 MyBatisUserDaoImpl이 SqlSession을 가져와야 함.
+	SqlSession session = null;
+	Reader reader=Resources.getResourceAsReader("config/SqlMapConfig.xml");
+	SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(reader);
+	SqlSession session=factory.openSession();
+	
+	@Override
+	public int addUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int updateUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int removeUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String userId) throws Exception {
+		
+		return null;
+	}
+
+	@Override
+	public List<User> getUserList(User user) throws Exception {
+		
+		return null;
+	}
+	
+}

@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- File Upload 폼 작성 시 주의 사항
+1) form tag를 이용하자 : 전송 방식은 반드시 post로 해야하기 때문에 <a> 사용 못함.
+	단순히 스트링 값을 넘기는 것이 아니라 MultipartFile 객체를 넘기는 것이므로 객체를 전달하는 post방식 쓰기.
+2) form의 속성으로 action. method 말고도 enctype = "multipart/form-data" 이 부분은 반드시 추가한다.
+3) MultipartFile이 파일 업로드 핵심 라이브러리... 이걸 Bean 설정 문서에 등록한다.
+ -->
+</head>
+<body>	
+	<h2 align="center">Single File Upload Test</h2>
+	<form action="fileUpload.do" method="post" enctype="multipart/form-data">
+		사용자 명 : <input type="text" name="userName"><p>
+		<input type="file" name="uploadFile"><p>
+		<input type="submit" value="파일업로드">
+	</form>
+	
+	<!-- 보통 여기까지 작성한 다음 바로 Controller 작성으로 넘어가는게 일반적이나
+		파일 업로드 로직은  Controller 작성으로 넘어가기 전에 VO 작성을 먼저 하고 넘어간다. 
+		
+		여기서 VO란 
+		-->
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+package com.encore.spring.model.Impl;
+
+import java.util.List;
+
+import com.encore.spring.domain.Item;
+import com.encore.spring.model.ItemService;
+
+public class ItemServiceImpl implements ItemService{
+
+	@Override
+	public Item getItem(int itemNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> getItemList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addItem(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateItem(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeItem(String itemNumber) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

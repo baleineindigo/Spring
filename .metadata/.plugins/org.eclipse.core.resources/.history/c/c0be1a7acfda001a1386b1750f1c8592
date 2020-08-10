@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>비동기 통신...Ajax...xml/text/★jason★</h2>
+	<a href="insert.do">동기 통신</a>
+	<input type="button" value="비동기 통신">
+</body>
+</html>

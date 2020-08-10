@@ -1,0 +1,5 @@
+package com.encore.mabatis.test;
+
+public class FactoryService {
+
+}

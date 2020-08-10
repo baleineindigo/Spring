@@ -1,0 +1,10 @@
+package com.encore.spring.model.Impl;
+
+import org.springframework.stereotype.Repository;
+
+import com.encore.spring.model.ItemDAO;
+
+
+public class ItemDAOImpl implements ItemDAO{
+
+}

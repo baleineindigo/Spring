@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr;
+	
+	function startRequest() {
+		xhr= new XMLHttpRequest();
+		xhr.onreadystatechange=callback; /* 여기서 호출이 아니기 때문에 ()를 넣지 않는다. */
+		xhr.open("get","SearchId.do");
+		xhr.send(null);
+		
+	}
+	
+	function callback() {
+		if(xhr.readyState==4){
+			if(xhr.status==200){
+				var jsonData=JSON.parse(xhr.responseText);
+				alert(jsonData.person.name+" "+jsonData.person.address);
+			}
+		}
+	}
+</script>
+</head>
+<body>
+<h2 align="center">비동기 통신 (Ajax)....xml/text/json으로 응답.. Json을 이용한 페이지</h2>
+<a href="insert.do">동기통신</a><p>
+	<input type="button" value="비동기통신" onclick="startRequest()">
+</body>
+</html>

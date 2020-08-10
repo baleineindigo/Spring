@@ -1,0 +1,23 @@
+package com.encore.mybatis.vo;
+/*
+ * Framework에서는 반드시 기본 생성자 넣아야 함
+ */
+public class MySawon {
+	private int num, age;
+	private String id,pwd,name,hiredate;
+
+	public MySawon() {
+	}
+	
+	public MySawon(int num, int age, String id, String pwd, String name, String hiredate) {
+		super();
+		this.num = num;
+		this.age = age;
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.hiredate = hiredate;
+	}
+	
+	
+}

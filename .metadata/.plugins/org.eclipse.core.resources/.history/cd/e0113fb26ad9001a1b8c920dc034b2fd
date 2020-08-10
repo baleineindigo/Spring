@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace=ItmeMapper>
+	<!-- Result Map-->
+	<resultMap type="Item" id="RMselect">
+		<result property="itemId" column="item_id"/>
+		<result property="itemName" column="item_name"/>
+		<result property="price" column="price"/>
+		<result property="description" column="description"/>
+		<result property="pictureUrl" column="picture_url"/>
+		<result property="count" column="count"/>	
+	</resultMap>
+	
+	<!-- Dynamic Query -->
+	<sql id="select-item">
+		select 
+		item_id,item_name,price,description,picture_url,count
+		from item
+	</sql>
+	
+	<!-- SQL QUERY -->
+	<select id="getItem" parameterType="int" resultMap="RMselect">
+		<include refid="RMselect"></include>
+		where item_id=${value}
+	</select>
+	
+	<select id="getItemList" resultMap="RMselect">
+		<include refid="RMselect"></include>
+	</select>
+		
+	<insert id="addItem" parameterType="Item">
+		insert into
+		item (item_id,item_name,price,description,picture_url,count)
+		values(#{itemId},#{itemName},#{price},#{description},#{pictureUrl},#{count})
+	</insert>
+	
+	<update id="updateItem" parameterType="Item">
+		update item  
+		set count=#{count}
+		where item_id=#{itemId}
+	</update>
+	
+	<delete id="removeItem" parameterType="int">
+		delete from item
+		where item_id=#{itemId}
+	</delete>	
+	
+</mapper>

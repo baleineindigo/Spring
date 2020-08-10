@@ -1,0 +1,42 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.encore.spring.domain.Member;
+import com.encore.spring.model.MemberDAO;
+
+public class MemberDAOImpl implements MemberDAO{
+	private String NS="MemberMapper."; 
+	private SqlSession sqlSession;
+	
+	@Override
+	public Member getMember(String id) {
+		return sqlSession.selectOne(NS+"getMember",id);
+	}
+
+	@Override
+	public List<Member> getMemberList() {
+		return sqlSession.selectOne(NS+"getMemberList");	
+	}
+
+	@Override
+	public void addMember(Member member) {
+
+		
+	}
+
+	@Override
+	public void updateMember(Member member) {
+
+		
+	}
+
+	@Override
+	public void removeMember(String id) {
+
+		
+	}
+	
+}

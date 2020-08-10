@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="FruitMapper">
+	<resultMap type="Item" id="ItemSelectRM">
+		<result property="itemNumber" column="item_id"/>
+		<result property="name" column="item_name"/>
+		<result property="price" column="price"/>
+		<result property="description" column="description"/>
+		<result property="url" column="picture_url"/>
+		<result property="count" column="count"/>	
+	</resultMap>
+	
+	<insert id="addItem" parameterType="Item">
+		insert into 
+		Items(Item_id,Item_name,password,age,grade,reg_date) 
+		values(#{item_id},#{item_name},#{price},#{description},#{picture_url},#{count})
+	</insert>	
+	
+	<update id="updateItem" parameterType="Item">
+		update Items
+		set Item_name=#{ItemName}
+		where Item_name="주몽"
+	</update>
+	
+	<delete id="removeItem" parameterType="string">
+		delete
+		from item
+		where item_id=#{value}
+	</delete>
+
+	<sql id="select-Items">
+		select Item_id,Item_name,password,age,grade,reg_date from Items
+	</sql>
+	<sql id="orderby-Item_id-desc">
+		ORDER BY Item_id DESC
+	</sql>
+
+	<select id="getItem" parameterType="Item" resultType="Item">
+		<include refid="select-Items"/>
+		where Item_id=#{ItemId}
+		<include refid="orderby-Item_id-desc"/>
+	</select>
+	
+	<select id="getItemList" parameterType="Item" resultMap="ItemSelectRM">
+		<include refid="select-Items"/>		
+		<where>
+			<if test="ItemName !=null">
+				Item_name LIKE #{ItemName}
+			</if>
+			<if test="age !=null">
+				or age LIKE #{age}
+			</if>
+		</where>
+		<include refid="orderby-Item_id-desc"/>
+	</select>	
+	
+	</insert>
+</mapper>

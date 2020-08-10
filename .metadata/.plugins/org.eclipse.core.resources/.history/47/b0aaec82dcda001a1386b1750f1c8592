@@ -1,0 +1,7 @@
+package com.encore.spring.impl;
+
+import com.encore.spring.model.MemberDAO;
+
+public class MemberDAOImpl implements MemberDAO{
+	
+}

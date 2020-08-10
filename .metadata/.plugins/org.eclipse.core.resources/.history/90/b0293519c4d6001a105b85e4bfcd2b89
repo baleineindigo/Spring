@@ -1,0 +1,40 @@
+package ibatis.services.user.impl;
+
+import java.util.List;
+
+import ibatis.services.domain.User;
+import ibatis.services.user.UserDAO;
+
+public class MyBatisUserDAOImpl10 implements UserDAO{
+
+	@Override
+	public int addUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int updateUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public int removeUser(User user) {
+		
+		return 0;
+	}
+
+	@Override
+	public User getUser(String userId) throws Exception {
+		
+		return null;
+	}
+
+	@Override
+	public List<User> getUserList(User user) throws Exception {
+		
+		return null;
+	}
+	
+}

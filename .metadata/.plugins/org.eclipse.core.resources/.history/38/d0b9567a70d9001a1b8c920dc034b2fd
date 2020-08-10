@@ -1,0 +1,11 @@
+package com.encore.spring.model.impl;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ItemDAOimpl {
+	@Autowired
+	SqlSession sqlSession; 
+}

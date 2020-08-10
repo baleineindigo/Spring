@@ -1,0 +1,48 @@
+package com.encore.spring.model.impl;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.encore.model.ItemDAO;
+import com.encore.spring.domain.Item;
+
+@Repository
+public class ItemDAOimpl implements ItemDAO{
+	@Autowired
+	SqlSession sqlSession;
+
+	@Override
+	public Item getItem(int itemId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Item> getItemList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void addItem(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateItem(Item item) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void removeItem(int itemId) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
